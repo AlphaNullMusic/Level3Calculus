@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Techniques (Part 1) | Differentiation | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/differentiation/introduction.html" class="text-white font-bold italic underline">Differentiation</a> / Techniques (Part 1)</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 text-lg">
+          <h1 class="title text-6xl font-light">Differentiation</h1>
+          <h2 class="text-2xl font-semibold pt-6">- Differentiating from First Principles</h2>
+          <p>We already know some of the rules of differentiating from calculus last year. For example: \(x^2\) becomes \(2x\) and \(5x\) becomes \(5\). But, how can we figure this out from first principles?</p><br/>
+          <p>Differentiation is about finding the rate of change at a single point of a function. It is hard to find the gradient from a graph as it is changing at every point of the curve. However, we can find two points on a graph and move them very close to each other so that the secant (line between the two points) gets smaller.</p><br/>
+          <p>We can name these points \(x\) and \(x + h\), where \(h\) is the difference between the two points on the x-axis. As \(h\) approaches zero, the average rate of change will get closer to the gradient of the tangent at the point. This means that we can use limits to solve it.</p>
+          <p>Therefore:
+            \[f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}\]
+            Where \(f'(x)\) is the rate of change of \(f(x)\) (the gradient function).
+          </p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Differentiate \(x^2\) from first principles.</em></p>
+          <p>Firstly, we identify \(f(x+h)\):
+            \[f(x) = x^2\]
+            \[f(x+h) = (x+h)^2\]
+          </p>
+          <p>Then we write the derivative from first principles:
+            \[\eqalign{f'(x) &= \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \\ &= \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h}}\]
+          </p>
+          <p>We can expand and cancel terms to simplify the fraction:
+            \[\eqalign{\lim_{h \to 0} \frac{(x^2 + 2xh + h^2) - x^2}{h} &= \lim_{h \to 0} \frac{2xh + h^2}{h} \\ &= \lim_{h \to 0} 2x + h}\]
+          </p>
+          <p>Finally, we take the limit. As \(h\) approaches zero, it effectively cancels out (because \(2x + 0.0000000001 \approx 2x\)). Therefore, we know that the derivative of \(x^2\) is \(2x\). We can apply this to other functions to generate rules for differentiation.</p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Differentiating Polynomials</h2>
+          <p>The rule for differentiating polynomials is as follows:</p>
+          <p>If \(f(x) = ax^n\) then \(f'(x) = anx^{n-1}\).</p>
+          <p>In basic terms, multiply the coefficient of \(x\) by \(n\) and subtract 1 from the power.</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note: \(f(x) = ax^n\) is in index form. You may need to manipulate the function to use it in index form.</p>
+          </blockquote>
+
+          <p>There are six situations that you need to know:</p>
+          <ol class="list-decimal">
+            <li>If the function is already in index form, then use the rule directly:
+              \[f(x) = 2x^5 + 3x^2 + 8x - 2\]
+              \[f'(x) = 10x^4 + 6x + 8\]
+            </li>
+            <li>If the function has fractions and x is on the numerator, seperate the fraction and use the rule:
+              \[\eqalign{f(x) &= \frac{3x^2}{4} + 2x \\ &= \frac{3}{4}x^2 + 2x}\]
+              \[f'(x) = \frac{3}{2}x + 2\]
+            </li>
+            <li>If the function has fractions and x is on the denominator, rewrite the x term with a negative index, use the rule, then convert the answer back to the form the question was in:
+              \[\eqalign{f(x) &= \frac{5}{4x^3} + \frac{x}{2} \\ &= \frac{5}{4}x^{-3} + \frac{1}{2}x}\]
+              \[\eqalign{f'(x) &= -\frac{15}{4}x^{-4} + \frac{1}{2} \\ &= -\frac{15}{4x^4} + \frac{1}{2}}\]
+            </li>
+            <li>If the function is a product of factors, expand out the brackets:
+              \[\eqalign{f(x) &= (x+2)(x-4) \\ &= x^2 - 2x - 8}\]
+              \[f'(x) = 2x - 2\]
+            </li>
+            <li>If the function is expressed as a complete fraction, with x on both sides, break the function up, simplify each one and use the rule:
+              \[\eqalign{f(x) &= \frac{5x^4 + 3x^2 + 2x - 5}{2x} \\ &= \frac{5x^4}{2x} + \frac{3x^2}{2x} + \frac{2x}{2x} - \frac{5}{2x} \\ &= \frac{5x^3}{2} + \frac{3x}{2} + 1 - \frac{5x^{-1}}{2}}\]
+              \[\eqalign{f'(x) &= \frac{15x^2}{2} + \frac{3}{2} + \frac{5x^{-2}}{2} \\ &= \frac{15x^2}{2} + \frac{3}{2} + \frac{5}{2x^2} \\ &= \frac{15x^4 + 3x^2 + 5}{2x^2}}\]
+            </li>
+            <li>If the fraction has surds, convert them to indicies (remembering that \(\sqrt[n]{x^m} = x^{\frac{m}{n}}\)), and use the rule:
+              \[\eqalign{f(x) &= \sqrt[3]{x} + \sqrt[4]{x^2} \\ &= x^{\frac{1}{3}} + x^{\frac{2}{4}}}\]
+              \[\eqalign{f'(x) &= \frac{1}{3}x^{-\frac{2}{3}} + \frac{1}{2}x^{-\frac{1}{2}}\\ &= \frac{1}{3\sqrt[3]{x^2}} + \frac{1}{2\sqrt{x}}}\]
+            </li>
+          </ol>
+
+          <h2 class="text-2xl font-semibold pt-6">- Differentiating Composite Functions (The Chain Rule)</h2>
+          <p>A composite function is where one function is substituted for a variable in another. For example: if we had \(f(x) = x^5\) and \(g(x) = x^3 - 2x + 1\), then \(f(g(x))\) is the composite function, where \(g(x)\) was substituted into \(f(x)\).</p>
+          <p>The composite function for this example is then:
+            \[\eqalign{f(g(x)) &= f(x^3 -2x + 1) \\ &= (x^3 - 2x + 1)^5}\]
+          </p><br/>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>In order to differentiate composite functions, we need to use the chain rule, which states that if \(f(x) = g(h(x))\) then \(f'(x) = g'(h(x)) * h'(x)\).</p>
+            <p>This can be rewritten as: if \(f(x) = v(u)\) then \(f'(x) = v' * u'\).</p>
+          </blockquote>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Differentiate \(y = (3x^2 + 2x - 1)^3\).</em></p>
+          <p>First we start with the outer function (\(y=u^3\)) and then multiply the answer by the inner function (\(u=3x^2 + 2x - 1\)) differentiated:
+            \[\eqalign{\frac{dy}{dx} &= \frac{dy}{du} * \frac{du}{dx} \\ &= 3u^2 * (6x+2)}\]
+          </p>
+          <p>Finally, we substitute \(u\) back in to give the answer:
+            \[\frac{dy}{dx} = 3(6x+2)(3x^2 + 2x - 1)^2\]
+          </p>
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/differentiation/limits.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: LIMITS</span>
+        </a>
+        <a href="/differentiation/techniques-2.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT<span class="hidden md:inline-block">: TECHNIQUES (PART 2)</span> >
+        </a>
+      </div>
+      
+    </div>
+  </body>
+</html>

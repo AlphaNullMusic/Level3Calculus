@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Techniques (Part 1) | Integration | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/integration/introduction.html" class="text-white font-bold italic underline">Integration</a> / Techniques (Part 1)</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 max-w-full text-lg">
+          <h1 class="title text-6xl font-light">Integration</h1>
+
+          <h2 class="text-2xl font-semibold pt-6">- Integrating Polynomials</h2>
+          <p>Differentiation is the process of finding the gradient of a curve at any point on that curve. Integration is the reverse process to differentiation.</p><br/>
+
+          <p><strong>For Example:</strong></p>
+          <p>If \(f(x) = 3x^2 + 2x^2 + 6\) then \(f'(x) = 9x^2 + 4x\) (differentiation).</p>
+          <p>If \(f'(x) = 9x^2 + 4x\) then \(f(x) = 3x^2 + 2x^2 + ?\) (integration).</p><br/>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>The general rule to follow when integrating is:
+              \[\int{ax^n dx} = \frac{a}{n+1}x^{n+1} + c\]
+            </p>
+            <p>
+              The \(c\) at the end represents the constant of integration. This is an unknown number as a number with no variables differentiates to zero. The constant could be any number and still differentiate to zero. However, we still need to allow for the possibility of this constant being present. Thus, we have the constant of integration (\(c\)) to account for this.
+            </p><br/>
+
+            <p>Note: when integrating \(c\), it becomes \(cx\).</p>
+          </blockquote>
+
+          <p><strong>For Example:</strong></p>
+          <p><em>&bullet; \(8x^3 - 2x^2 + 5dx\).</em></p>
+          <p>This question tells us to integrate the function \(f(x) = 8x^3 - 2x^2 + 5\) with respect to \(x\).</p><br/>
+
+          <p>Integrating will give us:
+            \[\frac{8}{4}x^4 - \frac{2}{3}x^3 + 5x + c\]
+          </p>
+          <p>We can simplify fractions further to get the final answer:
+            \[2x^4 - \frac{2x^3}{3} + 5x + c\]
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Integrating Rational Functions and Surds</h2>
+          <p>Similarly to differentiation of rational functions, there are six situations for integration that you need to know:</p>
+          <ol class="list-decimal">
+            <li>If the function is already in index form, then use the rule directly:
+              \[f(x) = 8x^3 - 2x^2 + 5\]
+              \[\int{f(x)dx = 2x^4 - \frac{2x^3}{3} + 5x + c}\]
+            </li>
+            <li>If the function has fractions and x is on the numerator, seperate the fraction and use the rule:
+              \[\eqalign{f(x) &= \frac{3x^2}{4} + 2x \\ &= \frac{3}{4}x^2 + 2x}\]
+              \[\int{f(x)dx = \frac{3}{12}x^3 + x^2 + c}\]
+            </li>
+            <li>If the function has fractions and x is on the denominator, rewrite the x term with a negative index, use the rule, then convert the answer back to the form the question was in:
+              \[\eqalign{f(x) &= \frac{5}{4x^3} + \frac{x}{2} \\ &= \frac{5}{4}x^{-3} + \frac{1}{2}x}\]
+              \[\eqalign{\int{f(x)dx} &= -\frac{5}{8}x^{-2} + \frac{1}{4}x^2 + c \\ &= -\frac{5}{8x^2} + \frac{x^2}{4} + c}\]
+            </li>
+            <li>If the function is a product of factors, expand out the brackets:
+              \[\eqalign{f(x) &= (x+2)(x-4) \\ &= x^2 - 2x - 8}\]
+              \[\int{f(x)dx = \frac{x^3}{3} - x^2 - 8x + c}\]
+            </li>
+            <li>If the function is expressed as a complete fraction, with x on both sides, break the function up, simplify each one and use the rule:
+              \[\eqalign{f(x) &= \frac{5x^4 + 3x^2 + 2x}{2x} \\ &= \frac{5x^3}{2} + \frac{3x}{2} + 1}\]
+              \[\int{f(x)dx = \frac{5x^4 + 6x^2 + 8x}{8} + c}\]
+            </li>
+            <li>If the fraction has surds, convert them to indicies (remembering that \(\sqrt[n]{x^m} = x^{\frac{m}{n}}\)), and use the rule:
+              \[\eqalign{f(x) &= \sqrt[3]{x} + \sqrt[4]{x^2} \\ &= x^{\frac{1}{3}} + x^{\frac{2}{4}}}\]
+              \[\int{f(x)dx = \frac{3\sqrt[3]{x^4}}{4} + \frac{2\sqrt{x^3}}{3} + c}\]
+            </li>
+          </ol>
+
+          <h2 class="text-2xl font-semibold pt-6">- Finding the Constant of Integration</h2>
+          <p>In the exam, there are two typical contexts which require you to find the constant of integration:</p>
+          <ul>
+            <li>- Kinematics</li>
+            <li>- Gradients and curves</li>
+          </ul>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>For example, if we were told that the derivative of \(f(x)\) is 5, we cna find that \(f(x) = 5x + c\), but to calculate \(c\) we need more information. In this example, we know the gradient of the graph, but not the y-intercept value. If we knew a co-ordinate that was on the curve of \f(x)\), then we could find the constant of integration with algebra.</p>
+          </blockquote>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Find the function \(f(x)\) which does through the point (1, 10) and has a derivative \(f'(x) = 5\).</em></p>
+          <p>We know:
+            \[\int{5dx = 5x + c}\]
+            \[f(x) = 5x + c\]
+          </p>
+          <p>We also know that the function goes through the co-ordinate (1, 10), so: \(10 = (5 * 1) + c\). Rearranging this gives us \(c = 5\).
+          </p>
+          <p>Therefore the full function is \(f(x) = 5x + 5\).</p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Integrating Exponentials</h2>
+          <p>We know that if you differentiate \(f(x) = e^x\) then you get \(f'(x) = e^x\). Therefore, to integrate an exponential function it follows that:
+            \[\int{e^x dx} = e^x + c\]
+          </p>
+          <p>If the function has coefficients, such as in \(f(x) = ae^{kx}\) then \(f'(x) = (a * k)e^{kx}\). This means that the general rule for integrating exponential functions is:
+            \[\int{ae^{kx}dx} = \frac{ae^{kx}}{k} + c\]
+          </p><br/>
+
+          <p><strong>Examples:</strong></p>
+          <ol class="list-decimal">
+            <li>
+              <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+                <p>\[\eqalign{\int{8e^{3x} dx} &= \int{(\frac{8}{3} * 3)e^{3x} dx} \\ &= \frac{8e^{3x}}{3} + c}\]</p>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+                <p>\[\eqalign{\int{\sqrt{e^{2x}} dx} &= \int{e^{\frac{2x}{2}} dx} \\ &= \int{e^x dx} \\ &= e^x + c}\]</p>
+              </blockquote>
+            </li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold pt-6">- Integrating Trigonometric Functions</h2>
+          <p>All basic trigonometric functions can be integrated to a different one. You will be given a table with the original and integral functions for your exam.</p><br/>
+
+          <table class="table-auto">
+            <thead>
+              <tr>
+                <th class="px-4 py-2">Function (\(y= f(x)\))</th>
+                <th class="px-4 py-2">Derivative (\(\int{f(x)dx + c}\))</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-4 py-2">\(\cos{x}\)</td>
+                <td class="border px-4 py-2">\(\sin{x} + c\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\sin{x}\)</td>
+                <td class="border px-4 py-2">\(-\cos{x} + c\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\sec^2{x}\)</td>
+                <td class="border px-4 py-2">\(\tan{x} + c\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\csc{x} \cot{x}\)</td>
+                <td class="border px-4 py-2">\(-\csc{x} + c\)</td>
+                
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\sec{x} \tan{x}\)</td>
+                <td class="border px-4 py-2">\(\sec{x} + c\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\csc^2{x}\)</td>
+                <td class="border px-4 py-2">\(-\cot{x} + c\)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note:</p>
+            <p>- \(\csc{x}\) can also be expressed as \(\text{cosec } x\).</p>
+            <p>- trigonometric functions are often written using this notation: \((\sin{x})^2\) is written as \(\sin^2{x}\).</p>
+            <p>- use the reverse chain rule for composite functions (e.g: \(\int{\sin{(g(x))} dx}\).</p>
+            <p>- you may be given a coordinate on the original curve, in which case you can determine the constant of integration using the same method as with polynomials.</p>
+          </blockquote>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; \(\int{5\cos{(2x + 1)} dx}\).</em></p>
+          <p>From the table, the integral of \(\cos{x}\) is \(\sin{x}\).</p>
+          <p>The derivative of \((2x + 1\) is 2, and we need to multiply 2 by \(\frac{5}{2}\) to get 5. Therefore, the answer is:
+            \[\int{5\cos{(2x + 1)} dx} = \frac{5}{2}\sin{(2x+1)} + c\]
+          </p>
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/integration/introduction.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: INTRODUCTION</span>
+        </a>
+        <a href="/integration/techniques-2.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT<span class="hidden md:inline-block">: TECHNIQUES (PART 2)</span> >
+        </a>
+      </div>
+      
+    </div>
+  </body>
+</html>

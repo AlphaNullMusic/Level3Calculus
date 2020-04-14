@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Limits | Differentiation | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/differentiation/introduction.html" class="text-white font-bold italic underline">Differentiation</a> / Limits</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 text-lg">
+          <h1 class="title text-6xl font-light">Differentiation</h1>
+          <h2 class="text-2xl font-semibold pt-6">- Limits</h2>
+          <p>The limit of a function \(f(x)\) is the value that the function gets closer to as x approaches a stated value.<br/>
+          For example, the limit of \(f(x)\) as x approaches a is written: \[\lim_{x \to a}f(x)\]</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>A point where a function is undefined is shown on a graph with an open circle. This occurs when the function either has a zero on the denominator, or both the numerator and denominator, as any number divided by zero is undefined.</p>
+          </blockquote>
+
+          <p><strong>For example:</strong></p>
+          <p><em>&bullet; Consider the following function: \[f(x) = \frac{(x-3)(x+4)}{(x+4)}\]</em></p>
+          <p>This function is undefined at \(x=-4\), as \(\frac{0}{0} = \text{undefined}\). This will be shown as an open circle at the point (-4, -7) on a graph.</p>
+          <p>The limit of this function is therefore -7, as \(x\) approaches -4 from both sides:
+            \[\lim_{x \to -4} \frac{(x-3)(x+4)}{(x+4)} = -7\]
+          </p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>For a limit to exist, the variable must approach the stated value from both sides. This means that if we get a sudden jump between values, the limit does not exist, or is undefined.</p>
+          
+
+            <figure class="py-6">
+              <img src="/assets/img/limits-discontinuous-example.jpg" alt="Examples of different types of discontinuities."/>
+              <figcaption><em>Examples of removable, jump and infinite discontinuities. Source: <a href="https://courses.lumenlearning.com/suny-openstax-calculus1/chapter/continuity/" class="underline" target="_blank">Lumen Learning</a>.</em></figcaption>
+            <figure>
+
+            <ol class="list-decimal list-inside">
+              <li>A removable (or point) discontinuity is where \(\lim_{x \to a} f(x) \ne f(a)\) or \(f(a)\) doesn't exist. There is a hole at \(x=a\).</li>
+              <li>Jump (or step) discontinuities happen when \(\lim_{x \to a^+} f(x) \ne \lim_{x \to a^-} f(x)\). There is a break in the curve at the stated value.</li>
+              <li>Infinite discontinuities occur when \(\lim_{x \to a} f(x) = \infty \text{ or} -\infty\). The limit would be at the asymptote, but it extends to \(\infty\), so it is undefined.</li>
+            </ol>
+          </blockquote>
+
+          <h2 class="text-2xl font-semibold pt-6">- Continuity, Domain and Range</h2>
+          <p>A function is continuous if its graph can be drawn without lifting the pen off the paper. That means that a function \(f(x)\) is continuous at point \(a\) if \(f(a)\) is defined, \(\lim_{x \to a} f(x)\) is defined, and \(\lim_{x \to a} f(x) = f(a)\). If a function has a hole, a jump, or an asymptote, then it is discontinuous.
+          </p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Linear, quadratic, and cubic functions are all continuous.</p>
+            <p>The function:
+              \[f(x) = \frac{(x - 3)(x + 4)}{(x + 4)}\]
+              is not a linear function as it has a hole at (-4, -7) and is therefore discontinuous.
+            </p>
+          </blockquote>
+
+          <p>The domain of a function is the set of x-values that has been used to define the function. Sometimes functions are drawn within the constraint of a specific domain. Doing this can remove a discontinuitiy from a graph.</p>
+          <p>For example, if the function:
+            \[f(x) = \frac{(x - 3)(x + 4)}{(x + 4)}\]
+            was graphed over the domain \(x > -3\), then the hole at \(x = -4\) would be missed out, so the graph is continuous over this domain.
+          </p><br/>
+
+          <p>The range of a function are the y-values that the function covers entirely, inside the stated domain.</p>
+          <p>For example: if a graph starts at \(x = -7\) and doesn't go higher than \(y = 4\), we would say the domain is \(-7 \leq x\) and the range is \(y \leq 4\).</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note: you may be required to identify whether a function is continuous and state the domain and range in your exam, so make sure you understand how to.</p><br/>
+
+            <p>You can also write the domain in set-builder notation.</p>
+            <p>For example: \(\{x \in \mathbb{R} | x \geq 4\}\)</p>
+            <p>Means: the set of all numbers \(x\), that are a member of Real Numbers, such that \(x\) is greater than or equal to 4.</p>
+          </blockquote>
+
+          <h2 class="text-2xl font-semibold pt-6">- Gradient, Concavity and Differentiability</h2>
+          <p>The gradient of a curve at a point is a measure of how steep the curve it. It is also known as the tangent of the curve at a certain point. The slope of a straight line is:
+            \[\frac{\text{rise}}{\text{run}} \text{ or } \frac{\Delta y}{\Delta x}\]
+          </p>
+          <p>We can also refer to the gradient of a function at a point as the derivative of the function at that particular point.</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note: gradient values of a function will be different at different values of \(x\).</p>
+          </blockquote>
+
+          <p>Sometimes there can be a point on the graph where we cannot find the gradient. This often happens if there is a discontinuity, such as a hole in the curve, or if there is a sudden change in the gradient, such as a sharp corner.</p>
+          <p>At points when we are unable to find a gradient (derivative), we say that the graph is not differentiable at those points.</p><br/>
+
+          <p>Some graphs exhibit concavity. A curve can either be concave up, concave down, or a combination of both. A section of the graph is concave up when the gradients of that section increase as \(x\) increases and concave down when the gradients decrease.</p>
+          <p>The point at which a graph changes from concave up to concave down (and vice verse) is called a point of inflection.</p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Finding Limits</h2>
+          <ul class="list-disc px-6 items-left">
+            <li class="font-bold py-4">Approach 1</li>
+            <p>We can algebraically eliminate common factors and then substitute the value that <em>x</em> tends to. This is the easier of the two methods as we just need to check if there is a common factor on both the numerator and the denominator. If so, we divide by the common factor and substitute to find the limit.</p>
+            <p>\[\eqalign{\lim_{x \to 2} \frac{x^2-4}{x-2} &= \lim_{x \to 2} \frac{(x+2)(x-2)}{(x-2)} \\ &= \lim_{x \to 2} (x+2) \\ &= (2+2) \\ &= 4}\]</p>
+
+            <li class="font-bold py-4">Approach 2</li>
+            <p>If we can't find a common factor for the numerator and denominator, then we can substitute values that are very close to but not at the value of the limit (2 in this example).</p>
+            <p>When \(x = 1.99, \lim_{x \to 2} \frac{x^2-4}{x-2}\)<br/>
+            &nbsp;\(= \lim_{x \to 2} \frac{1.99^2-4}{1.99-2}\)<br/>
+            &nbsp;\(= 3.99\)</p>
+
+            <p>When \(x = 2.01, \lim_{x \to 2} \frac{x^2-4}{x-2}\)<br/>
+            &nbsp;\(= \lim_{x \to 2} \frac{2.01^2-4}{2.01-2}\)<br/>
+            &nbsp;\(= 4.01\)</p>
+
+            <p>Because the values from both sides when approaching 2 are close to 4, the limit when \(x=2\) is 4.</p>
+          </ul>
+
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/differentiation/introduction.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: INTRODUCTION</span>
+        </a>
+        <a href="/differentiation/techniques-1.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT<span class="hidden md:inline-block">: TECHNIQUES (PART 1)</span> >
+        </a>
+      </div>
+      
+    </div>
+  </body>
+</html>

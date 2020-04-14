@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Techniques (Part 2) | Differentiation | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/differentiation/introduction.html" class="text-white font-bold italic underline">Differentiation</a> / Techniques (Part 2)</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 max-w-full text-lg">
+          <h1 class="title text-6xl font-light">Differentiation</h1>
+
+          <h2 class="text-2xl font-semibold pt-6">- Differentiating Products of Two or More Functions</h2>
+          <p>Some functions are products of two seperate functions, such as: \(f(x) = g(x) * h(x)\).</p>
+          <p>Previously, we differentiated an example in this form: \(f(x) = (x+2)(x-4)\). We did this by expanding out the brackets to put it in index form and then using the polynomial rule.</p><br/>
+
+          <p>However, some functions may be too hard to expand, such as: \(2\sqrt[3]{x^5}(x^3 + 5x - 6)\).</p>
+          <p>Rather than expanding these into index form, we can use the product rule. The product rule states that for any function expressed as \(f(x) = g(x) * h(x)\), then \(f'(x) = g'(x) * h(x) = g(x) * h'(x)\).</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note: you may be required to prove the product rule by use of first principles for excellence.</p>
+          </blockquote>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Differentiate \(y=(3x^4 + 2x + 3)(5x^5 - 4x + 6)\).</em></p>
+          <p>First, we let \(u=3x^4 + 2x + 3\) and \(v=5x^5 - 4x + 6\).</p>
+          <p>Then we find the derivatives of \(u\) and \(v\):
+            \[u' = 12x^3 + 2\]
+            \[v' = 25x^4 - 4\]
+          </p>
+          <p>Then we use the product rule:
+            \[\eqalign{y' &= u'v + uv' \\ &= (12x^3 + 2)(5x^5 - 4x + 6) + (3x^4 + 2x + 3)(25x^4 - 4)}\]
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Differentiating Quotients</h2>
+          <p>Some functions are quotients of two seperate functions (one function divided by another), for example: 
+            \[\eqalign{f(x) &= \frac{g(x)}{h(x)} \\ &= \frac{2\sqrt[3]{x^5}}{x^3 + 5x - 6}}\]
+          </p>
+          <p>To differentiate this function, we can use the quotient rule, which states that if:
+            \[f(x) = \frac{g(x)}{h(x)}\]
+          </p>
+          <p>then:
+            \[f'(x) = \frac{g'(x) * h(x) - g(x) * h'(x)}{(h(x))^2}\]
+          </p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Differentiate:
+            \[f(x)=\frac{2x^2 + x + 1}{\sqrt[4]{x}}\]
+          </em></p>
+          <p>First we let \(u = 2x^2 + x + 1\) and \(v = \sqrt[4]{x}\).</p>
+          <p>Then we find the derivatives of \(u\) and \(v\):
+            \[u' = 4x + 1\]
+            \[v' = \frac{1}{4\sqrt[4]{x^3}}\]
+          </p>
+          <p>Finally we substitute into the quotient rule to get:
+            \[f'(x) = \frac{(4x + 1)\sqrt[4]{x} - (2x^2 + x + 1)(\frac{1}{4\sqrt[4]{}x^3})}{\sqrt{x}}\]
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Differentiating Exponential Functions</h2>
+          <p>The exponential function \(f(x) = e^x\) is a special in that it is the only function to equal its derivative at all points. This is because the gradient of the tangent at any point is equal to the y co-ordinate at that point. Therefore, if \(f(x) = e^x\) then \(f'(x) = e^x\).</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Sometimes we may have to differentiate composite exponential function, such as \(y = 5e^{3x-4}\). In this case, we use the chain rule which can be shortened to a simple rule: if \(f(x) = ae^{g(x)}\) then \(f'(x) = a * g'(x) * e^{g(x)}\).</p>
+          </blockquote>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Differentiate \(f(x) = -2e^{(-5x^2 + 3x - 5)}\).</em></p>
+          <p>First we let \(g(x) = -5x^2 + 3x - 5\) so \(f(x) = -2e^{g(x)}\).</p>
+          <p>We know that \(g'(x) = -10x + 3\), so the derivative of \(f(x)\) is:
+            \[\eqalign{f'(x) &= -2 * g'(x)e^{g(x)} \\ &= 2(10x - 3)e^{(-5x^2 + 3x - 5)}}\]
+          </p>
+            
+          <h2 class="text-2xl font-semibold pt-6">- Differentiating the Natural Logarithm Function</h2>
+          <p>The exponential and natural logarithm functions are related and inverse to each other. This means that if \(y = e^x\) then \(\log_{e} y = x\).</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note: \(log_{e} x = y\) is usually expressed as \(\ln{x}\).</p>
+          </blockquote>
+
+          <p>The rule for differentiating the natural logarithm is if \(y = \ln{x}\) then \(\frac{dy}{dx} = \frac{1}{x}\).</p><br/>
+
+          <p><strong>Proof:</strong></p>
+          <p>If we let \(log_{e} x = y\) then we can find that \(x = e^y\). Differentiating that gives itself:
+            \[\frac{dx}{dy} = e^y\]
+          </p>
+          <p>This is inverse to what we usually work with (differentiating the function of \(y\) with respect to \(x\)), so we flip it:
+            \[\frac{dy}{dx} = \frac{1}{e^y}\]
+          </p>
+          <p>Finally, we substitute \(x = e^y\) back into the equation:
+            \[\frac{dy}{dx} = \frac{1}{x}\]
+          </p><br/>
+
+          <p>Combining this with the chain rule will give us a rule to differentiate composite functions with natural logarithms:</p>
+          <p>If \(f(x) = \ln{g(x)}\) then:
+            \[\eqalign{f'(x) &= g'(x) * \frac{1}{g(x)} \\ &= \frac{g'(x)}{g(x)}}\]
+          </p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Differntiate \(y = \ln{((3x+7)^3)}\)</em></p>
+          <p>Using the chain rule to differentiate \(g(x)\) we get:
+            \[\eqalign{g'(x) &= 3(3x + 7)^2 * 3 \\ &= 9(3x + 7)^2}\]
+          </p>
+          <p>Then we substitute it into the rule to get the answer:
+            \[\eqalign{\frac{dy}{dx} &= \frac{g'(x)}{g(x)} \\ &= \frac{9(3x + 7)^2}{(3x + 7)^3} \\ &= \frac{9}{3x + 7}}\]
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Differentiating Trigonometric Functions</h2>
+          <p>All basic trigonometric functions can be differentiated. You will be given a table with the original and derivative functions for your exam. They can also be worked out using first principles and trigonometric ratios.</p><br/>
+
+          <table class="table-auto">
+            <thead>
+              <tr>
+                <th class="px-4 py-2">Function (\(f(x)\))</th>
+                <th class="px-4 py-2">Derivative (\(f'(x)\))</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-4 py-2">\(\sin{x}\)</td>
+                <td class="border px-4 py-2">\(\cos{x}\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\cos{x}\)</td>
+                <td class="border px-4 py-2">\(-\sin{x}\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\tan{x}\)</td>
+                <td class="border px-4 py-2">\(\sec^2{x}\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\csc{x}\)</td>
+                <td class="border px-4 py-2">\(-\csc{x} \cot{x}\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\sec{x}\)</td>
+                <td class="border px-4 py-2">\(\sec{x} \tan{x}\)</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(\cot{x}\)</td>
+                <td class="border px-4 py-2">\(-\csc^2{x}\)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note:</p>
+            <p>- \(\csc{x}\) can also be expressed as \(\text{cosec } x\).</p>
+            <p>- trigonometric functions are often written using this notation: \((\sin{x})^2\) is written as \(\sin^2{x}\).</p>
+            <p>- use the chain rule for composite functions (e.g: \(f(x) = \sin{(g(x))}\).</p>
+          </blockquote>
+          
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Differentiate \(y = \sin{x} \cos{x}\).</em></p>
+          <p>Let \(u = \sin{x}\) and \(v = \cos{x}\).</p>
+          <p>We know from the table that \(u' = \cos{x}\) and \(v' = -\sin{x}\).</p>
+          <p>Therefore, we can use the product rule to give the answer:
+            \[\eqalign{y' &= u'v + uv' \\ &= \cos{x}\cos{x} + \sin{x}(-\sin{x}) \\ &\ (\cos{x})^2 - (\sin{x})^2 \\ &= \cos^2{x} - \sin^2{x}}\]
+          </p>
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/differentiation/techniques-1.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: TECHNIQUES (PART 1)</span>
+        </a>
+        <a href="/differentiation/parametric-curves.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT<span class="hidden md:inline-block">: PARAMETRIC CURVES</span> >
+        </a>
+      </div>
+      
+    </div>
+  </body>
+</html>

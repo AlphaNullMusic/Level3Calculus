@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>De Moivre's Theorem | Complex Numbers | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/complex-numbers/introduction.html" class="text-white font-bold italic underline">Complex Numbers</a> / De Moivre's Theorem</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 text-lg">
+          <h1 class="title text-6xl font-light">Complex Numbers</h1>
+          <h2 class="text-2xl font-semibold pt-6">- De Moivre's Theorem</h2>
+          <p>Let's try squaring the complex number \(z=r\text{cis}(\theta)\):
+            \[\eqalign{z^2 &= (r\text{cis}(\theta))^2 \\ &= (r\text{cis}(\theta))(r\text{cis}(\theta)) \\ &= r^2 \text{cis}(2\theta)}\]
+          </p>
+          <p>De Moivre's Theorem generalises this result to any power (\(n\)). It states that if \(z=r\text{cis}(A)\), then \(z^n = r^n \text{cis}(nA)\). We can use this to find power and roots of complex numbers in polar form.</p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Find \(z^4\) when \(z=5\text{cis}(1.5)\). Express your answer in rectangular form.</em></p>
+          <p>
+            \[\eqalign{z^4 &= (5\text{cis}(1.5))^4 \\ &= 5^4(\text{cis}(1.5*4)) \\ &= 625\text{cis}(6)}\]
+          </p>
+          <p>Because the angle (6) is greater than \(\pi\) we have to simplify. We can do this by subtracting the angle from \(2\pi\) (a full revolution). This means that the answer is: \(z^4 = 625\text{cis}(-0.2832)\).</p><br/>
+
+          <p>The final answer in rectangular form is: \(z^4 = 600.1 - 174.6i\)</p>
+
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/complex-numbers/polar-form.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: POLAR FORM</span>
+        </a>
+        <a href="/complex-numbers/loci.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT<span class="hidden md:inline-block">: LOCI</span> >
+        </a>
+      </div>
+
+    </div>
+  </body>
+</html>

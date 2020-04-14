@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Numerical Methods | Integration | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/integration/introduction.html" class="text-white font-bold italic underline">Integration</a> / Numerical Methods</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 max-w-full text-lg">
+          <h1 class="title text-6xl font-light">Integration</h1>
+
+          <h2 class="text-2xl font-semibold pt-6">- The Rectangle Rule</h2>
+          <p>Numerical integration is a way of estimating the definite integral. The simplest of the three methods needed for your exam is the Rectangle Rule.</p><br/>
+
+          <p>This method divides the area underneath the curve into a series of rectangles, which are then summed up to give an approximate total area underneath the curve.</p>
+          <p>To do this, we need to know the boundary values and the number of rectangles to make (sometimes referred to as the number of sub-intervals).</p><br/>
+
+          <p>To find the area of each rectangle, we have to find the height of each rectange, which is done by working out the mid-point of each (we already know the width). We can then substitute the mid-point of each rectangle into the function and generate a table of values.</p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Find an approximate area underneath the function \(y = 6\log{(x)} + 2\) between \(x = 2\) and \(x = 4\) using the rectangle rule with four subintervals.</em></p><br/>
+
+          <p>Firstly, it is good to sketch the graph and rectangles to make sure your answer is reasonable accurate.</p>
+          <p>Then we find the width of the rectangles by dividing the difference of the range by the number of rectangles: \(\text{width (w)} = \frac{4 - 2}{4} = 0.5\).</p><br/>
+
+          <p>Finally, we can generate a list with values for each rectangle:</p>
+
+          <ul>
+            <li>
+              <p>- \(\text{midpoint }(x_{n}) = 1.75 + wn\)</p>
+              <ul class="list-disc pl-12">
+                <li>Rectangle 1 = 2.25</li>
+                <li>Rectangle 2 = 2.75</li>
+                <li>Rectangle 3 = 3.25</li>
+                <li>Rectangle 4 = 3.75</li>
+              </ul>
+            </li>
+            <li>
+              <p>- \(\text{height }(y_{n}) = f(x_{n})\)</p>
+              <ul class="list-disc pl-12">
+                <li>Rectangle 1 = 4.113</li>
+                <li>Rectangle 2 = 4.636</li>
+                <li>Rectangle 3 = 5.071</li>
+                <li>Rectangle 4 = 5.444</li>
+              </ul>
+            </li>
+            <li>
+              <p>- \(\text{area}(a) = w * y_{n}\)</p>
+              <ul class="list-disc pl-12">
+                <li>Rectangle 1 = 2.0565</li>
+                <li>Rectangle 2 = 2.318</li>
+                <li>Rectangle 3 = 2.5355</li>
+                <li>Rectangle 4 = 2.722</li>
+              </ul>
+            </li>
+            <li>
+              <p>- the total area is 9.632</p>
+            </li>
+          </ul>
+          
+          <h2 class="text-2xl font-semibold pt-6">- The Trapezium Rule</h2>
+          <p>Another, more accurate, way of approximating an indefinite integral is to use a series of trapeziums. It will produce the best estimation out of all three methods.</p>
+          <p>If we do the same thing as with the rectangle rule, and have trapezia of the same width (\(h\)), we can create a general formula. The area of one trapezium is given by:
+            \[\eqalign{\text{area} &= \frac{a+b}{2} + h \\ &= \frac{h}{2}(a + b)}\]
+          </p>
+          <p>We can generalise this to give (remembering that there is one more \(y\) value than the number of trapezia:
+            \[T = \frac{h}{2}(y_{0} + 2y_{1} + 2y_{2} + ... + 2y{n-1} + y_{n})\]
+          </p>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Use the trapezium rule to find the area underneath \(y = -x^2 + 4\) between \(x = 0\) and \(x = 2\) using four subintervals.</em></p><br/>
+
+          <p>For this example, \(h = \frac{2}{4} = 0.5\).</p>
+          <p>You will have to generate a table of values, as with the rectangle rule:</p>
+
+          <table class="table-auto">
+            <thead>
+              <tr>
+                <th class="px-4 py-2">\(n\)</th>
+                <th class="px-4 py-2">\(x_{n}\)</th>
+                <th class="px-4 py-2">\(y_{n}\)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-4 py-2">0</td>
+                <td class="border px-4 py-2">0</td>
+                <td class="border px-4 py-2">4</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">1</td>
+                <td class="border px-4 py-2">0.5</td>
+                <td class="border px-4 py-2">3.75</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">2</td>
+                <td class="border px-4 py-2">1</td>
+                <td class="border px-4 py-2">3</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">3</td>
+                <td class="border px-4 py-2">1.5</td>
+                <td class="border px-4 py-2">1.75</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">4</td>
+                <td class="border px-4 py-2">2</td>
+                <td class="border px-4 py-2">0</td>
+              </tr>
+            </tbody>
+          </table>
+          <br/>
+
+          <p>Finally, you will substitute the values into the trapezium rule:
+            \[\eqalign{T &= \frac{h}{2}(y_{0} + 2y_{1} + 2y_{2} + ... + 2y{n-1} + y_{n}) \\ &= \frac{0.5}{2}(4 + 2 * 3.75 + 2 * 3 + 2 * 1.75 + 0) \\ &= \frac{0.5}{2}(4 + (2 * 8.5)) \\ &= 5.25}\]
+          </p>
+
+          <p>Integrating \(\int_{0}^{2}{(-x^2 + 4) dx}\) would give us \(5\frac{1}{3}\), which is pretty close to our approximation of 5.25.</p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Simpson's Rule</h2>
+          <p>Finally, we have Simpson's Rule, which uses parabolas to approximate the area under a curve:
+            \[\int_{a}^{b}{f(x) dx} \approx \\ \frac{h}{3}(y_{0} + y_{n} + 4(y_{1} + y_{3} + ... + y_{n-1}) + \\ 2(y_{2} + y_{4} + ... + y_{n-2}))\]
+          </p>
+          <p>In this formula, \(h\) represents the width of the range that each parabola approximates.</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note: the Simpson's Rule will only work with an even number of sub-intervals.</p>
+          </blockquote>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Use Simpson's Rule to find the area underneath \(y = -x^2 + 4\) between \(x = 0\) and \(x = 2\) using four subintervals.</em></p><br/>
+
+          <p>Get the value of \(h\):
+            \[\eqalign{h &= \frac{2 - 0}{4} \\ &= 0.5}\]
+          </p>
+          <p>Now we generate a table of values:</p>
+          <table class="table-auto">
+            <thead>
+              <tr>
+                <th class="px-4 py-2">\(y\) number</th>
+                <th class="px-4 py-2">\(x\) value</th>
+                <th class="px-4 py-2">\(y\) value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-4 py-2">\(y_{0}\)</td>
+                <td class="border px-4 py-2">0</td>
+                <td class="border px-4 py-2">4</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(y_{1}\)</td>
+                <td class="border px-4 py-2">0.5</td>
+                <td class="border px-4 py-2">3.75</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(y_{2}\)</td>
+                <td class="border px-4 py-2">1</td>
+                <td class="border px-4 py-2">3</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(y_{3}\)</td>
+                <td class="border px-4 py-2">1.5</td>
+                <td class="border px-4 py-2">1.75</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">\(y_{4}\)</td>
+                <td class="border px-4 py-2">2</td>
+                <td class="border px-4 py-2">0</td>
+              </tr>
+            </tbody>
+          </table>
+          <br/>
+
+          <p>Then we substitute these into the formula:
+            \[\eqalign{\int_{a}^{b}{f(x) dx} &\approx \frac{h}{3}(y_{0} + y_{4} + 4(y_{1} + y_{3}) + 2(y_{2})) \\ &\approx \frac{0.5}{3}(4 + 0 + 4(3.75 + 1.75) + 2(3))\\ &\approx \frac{1}{6}(4 + 22 + 6) \\ &\approx 5\frac{1}{3}}\]
+          </p>
+
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/integration/areas.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: AREAS</span>
+        </a>
+        <a href="/integration/differential-equations.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT<span class="hidden md:inline-block">: DIFFERENTIAL EQUATIONS</span> >
+        </a>
+      </div>
+      
+    </div>
+  </body>
+</html>

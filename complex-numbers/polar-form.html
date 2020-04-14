@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Polar Form | Complex Numbers | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/complex-numbers/introduction.html" class="text-white font-bold italic underline">Complex Numbers</a> / Polar Form</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 text-lg">
+          <h1 class="title text-6xl font-light">Complex Numbers</h1>
+          <h2 class="text-2xl font-semibold pt-6">- Argand Diagrams</h2>
+          <p>We can't represent complex numbers on a normal number line. This is because they are made up of real and imaginary numbers, so we have to use a two-dimensional representation.</p>
+          <p>To do this, we can graph a cartesian plane with the imaginary component on the vertical axis and the real component on the horizontal axis, sometimes referred to as a complex plane.</p>
+          <p>Then, we can draw coordinates from the origin (0,0) to the coordinate of the complex number. The graph is called an Argand Diagram. You may be expected to draw one in the exam.</p>
+
+          <figure class="py-6">
+            <img width="300px" src="/assets/img/argand-diagram-example.png" alt="Basic Argand Diagram"/>
+            <figcaption>
+              <em>Basic Argand Diagram. Source: <a href="https://en.wikipedia.org/wiki/Complex_plane" class="underline" target="_blank">Wikipedia</a>.</em>
+            </figcaption>
+          </figure>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Represent the complex number \(2+3i\) on an argand diagram.</em></p>
+          <p>To do this, we would go three units up in imaginary axis and along 2 units in the real axis. We can then draw a straight line to this point.</p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Modulus</h2>
+          <p>In the argand diagram above, the length from the origin to the complex number is labelled \(r\). This is known as the modulus, or absolute value. As suggested in the name, it's the absolute value from (0,0) to the complex number on the two-dimensional plane. The absolute value of a complex number is often shown as \(|a+bi|\).</p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Calculate \(|2+i|\).</em></p>
+          <p>To solve this, we have to use Pythagoras' Theorem on the right-angled triangle that we can see on the argand diagram:
+            \[\eqalign{r^2 &= a^2 + b^2 \\ &= 2^2 + 1^2 \\ &= 5}\]
+            \[r=\sqrt{5}\]
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Argument</h2>
+
+          <p>The angle between the modulus and the positive real axis is referred to as the argument (symbol \(\theta\)). We can use trigonometry on the right-angled triangle formed on the argand diagram to find the angle.</p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Calculate the argument of \(2+i\):</em>
+            \[\tan(\theta) = \frac{1}{2}\]
+            \[\eqalign{\theta &= \arctan{\frac{1}{2}} \\ &= \frac{1}{\sqrt{3}} \text{radians}}\]  
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Converting to Polar Form</h2>
+          <p>Until now, we have been using rectangular form for these calculations. However, we can convert complex numbers to polar form, and vice versa. To do this, we first need to calculate both the modulus and the argument.</p>
+          <p>We can derive the formula for complex numbers in polar form using trigonometric ratios.</p><br/>
+
+          <p>For \(a\) (the real part of the number):
+            \[\cos(\theta)=\frac{a}{r}\]
+            \[a=r\cos(\theta)\]
+          </p><br/>
+
+          <p>For \(bi\) (the imaginary part of the number):
+            \[\sin(\theta)=\frac{b}{r}\]
+            \[b=r\sin(\theta)\]
+            \[bi=i*r\sin(\theta)\]
+          </p><br/>
+
+          <p>We can then substitute these into the general expression for complex numbers:
+            \[\eqalign{z &= a+bi \\ &= r\cos(\theta) + ir\sin(\theta) \\ &= r(\cos(\theta) + i\sin(\theta)) \\ &= r\text{cis}(\theta) }\]
+            Where \(\text{cis}(\theta) = \cos(\theta) + i\sin(\theta)\)
+          </p><br/>
+
+          <p><strong>Example of conversion to polar form:</strong></p>
+          <p><em>&bullet; Convert \(z=5-2i\) to polar form.</em></p>
+          <p>First, we calculate the modulus:
+            \[\eqalign{r &= \sqrt{5^2 + (-2)^2} \\ &= \sqrt{25 + 4} \\ &= \sqrt{29}}\]
+          </p>
+          <p>Then we calculate the argument:
+            \[\eqalign{\theta &= \arctan(\frac{2}{5}) \\ &= 21.8 \text{ degrees (or 0.3805 rad)}}\]
+            Because the complex number is below the real axis (negative imaginary part), the argument is expressed as negative. Therefore, we can rewrite in polar form:
+          </p>
+          <ul>
+            <li>- Rectangular form: \(z=5-2i\)</li>
+            <li>- Polar Form: \(z=\sqrt{29}\text{cis}(-0.3805)\text{ rad}\)</li>
+          </ul><br/>
+
+          <p>Polar form is either expressed in radians or degrees (depending on how you calculated the modulus and argument). If in radians, it is commonly expressed to four decimal places, and one for degrees.</p><br/>
+
+          <p><strong>Example of conversion to rectangular form:</strong></p>
+          <p>We can also convert complex numbers in polar form back to rectangular form. This is done by splitting \(\text{cis}(\theta)\) into \(\cos(\theta)+i\sin(\theta)\) to get the real and imaginary components.</p><br/>
+
+          <p><em>&bullet; Express \(z=2\text{cis}(100)\) in rectangular form.</em></p>
+          <p>
+            \[\eqalign{z &= 2\text{cis}(100) \\ &= 2\cos(100) + 2i\sin(100) \\ &= -0.35 + 1.97i}\]
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Multiplying and Dividing</h2>
+          <p>To multiply complex numbers in polar form, we multiply the moduli and add the arguments. So, the formula is \(zw=r_{1}r_{2}\text{cis}(A+B)\), where \(z\) and \(w\) are complex numbers in polar form.</p><br/>
+          <p>To divide complex numbers in polar form, we divide the moduli and subtract the arguments. This makes the formula to divide: \(\frac{z}{w} = \frac{r_{1}}{r_{2}}\text{cis}(A-B)\).</p>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; If \(z=6\text{cis}(2.25)\) and \(p=2\text{cis}(1.55)\), calculate \(\frac{z}{p^2}\) to two decimal places.</em></p>
+          <p>
+            \[\eqalign{\frac{z}{p^2} &= \frac{6\text{cis}(2.25)}{(2\text{cis}(1.55))(2\text{cis}(1.55))} \\ &= \frac{6\text{cis}(2.25)}{4\text{cis}(3.1)} \\ &= (6 \div 4)\text{cis}(2.25 - 3.1) \\ &= 1.5\text{cis}(-0.85) \text{ rad}}\]
+          </p>
+
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/complex-numbers/equations.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: QUADRATIC AND CUBIC EQUATIONS</span>
+        </a>
+        <a href="/complex-numbers/demoivre.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT <span class="hidden md:inline-block">DE MOIVRE'S THEOREM</span> >
+        </a>
+      </div>
+
+    </div>
+  </body>
+</html>

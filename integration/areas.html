@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Areas | Integration | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/integration/introduction.html" class="text-white font-bold italic underline">Integration</a> / Areas</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 max-w-full text-lg">
+          <h1 class="title text-6xl font-light">Integration</h1>
+
+          <h2 class="text-2xl font-semibold pt-6">- Definite Integrals</h2>
+          <p>A definite integral is a special type of integral where you're asked to find the value of the integral between two points. It is written in this notation:
+            \[\int_{a}^{b}{f(x) dx}\]
+          </p>
+          <p>This expression means that you take the value of the integral at \(x = b\) and subtract the value at \(x=a\) from it.</p>
+          <p>We can define the integrated function \(\int{f(x)} = F(x)\), so it becomes:
+            \[\int_{a}^{b}{f(x) dx} = (F(b) + c) - (F(a) + c)\]
+          </p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Evaluate \(\int_{2}^{4}{2x^3 + 5 dx}\)</em></p><br/>
+
+          <p>First we find the general integral:
+            \[\int{2x^3 + 5 dx} = \frac{1}{2}x^4 + 5x + c\]
+          </p>
+          <p>We can then evaluate this at \(x = 2\) and \(x = 4\) to find the answer. There is a special notation to denote substituting values into an integrated equation:
+            \[[\frac{1}{2} x^4 + 5x]_{2}^{4}\]
+          </p>
+          <p>By substituting our \(x\) values we get the answer:
+            \[\eqalign{[\frac{1}{2} x^4 + 5x]_{2}^{4} &= (\frac{1}{2} * 4^4 + 5 * 4) - (\frac{1}{2} * 2^4 + 5 * 2) \\ &= 148 - 18 \\ &= 130}\]
+          </p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>If we know the rate at which a quantity \(f(x)\) is changing (the rate of change), then we can use definite integrals to calculate the total change in \(f(x)\) over a fixed period:
+              \[\int_{1}^{2}{f'(x) dx} = f(2) - f(1)\]
+              This equation will tell us how much \(f(x)\) has changed between \(x = 1\) and \(x = 2\).
+            </p>
+          </blockquote>
+
+          <h2 class="text-2xl font-semibold pt-6">- Kinematics</h2>
+          <p>A very common context for integral problems in the exam is kinematics, which is the movement of object in the physical world.</p><br/>
+
+          <p>A very important thing to remember is that is a function gives the displacement (\(s\)) of an object, the first derivative gives the velocity (\(v\)) of the object, and the second derivative will represent the acceleration (\(a\)) of the object at a specific time.</p>
+          <p>Therefore, we can say that \(f(t) = s\), \(f'(t) = v\) and \(f''(t) = a\).</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Remember these fundamentals for kinematics:</p><br/>
+
+            <p>- replacing time with zero will give the initial value of displacement, velocity or acceleration.</p>
+            <p>- solving the equation when it equals zero will give the time when the object is at the starting point, at rest, or not accelerating.</p>
+            <p>- is \(v > 0\) then the object is moving away from the start position, and if \(v < 0\) it is moving back towards the start.</p>
+            <p>- if \(a > 0\) then the object is speeding up, if \(a = 0\) then the object is at a constant velocity, and if \(a < 0\) then the object is slowing down.</p>
+          </blockquote>
+
+          <p><strong>Example:</strong></p>
+          <p><em>Troy is flying a toy helicopter. It begins on the picnic table, flies away from Troy for some distance and then flies back to him. The equation that represents the helicopter's distance from the picnic table after \(t\) seconds is given by: \(s = -0.5t^2 + 4t\). Distance is measured in metres and time in seconds.</em></p><br/>
+
+          <ul>
+            <li>
+              <p><em>i) How far has the toy helocipter travelled from the picnic table after 5 seconds?</em></p>
+
+              <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+                <p>To find displacement, we substitute \(t = 5\) into the function:
+                  \[\eqalign{s &= -0.5t^2 + 4t \\ &= -0.5 * 5^2 + (4 * 5) \\ &= -0.5 * 25 + 20\\ &= 7.5m}\]
+                </p>
+              </blockquote>
+            </li>
+            <li>
+              <p><em>ii) At what time does the helicopter stop moving away and start moving back towards Troy?</em></p>
+
+              <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+                <p>This situation will occur when \(s = 0\) and is sometimes referred to as the object's fixed point.</p>
+                <p>Solving \(0 = -0.5t^2 + 4t\) gives \(t = 0\) and \(t = 4\) seconds. The first answer is when the helicopter starts flying from the table, so the answer is at 4 seconds.</p>
+              </blockquote>
+            </li>
+            <li>
+             <p><em>iii) What is the function that represents the velocity of the helicopter?</em></p>
+
+              <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+                <p>Remember that \(v = s' = \frac{ds}{dt}\)</p>
+                <p>So, differentiating the original function will give us the function of velocity: \(v = -t + 4\text{m/s}\).</p>
+              </blockquote>
+            </li>
+            <li>
+             <p><em>iv) What was the helicopter's initial velocity?</em></p>
+
+              <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+                <p>Initial velocity happens when \(t = 0\), so the answer is:
+                  \[\eqalign{v &= -(0) + 4 \\ &= 4\text{m/s}}\]
+                </p>
+              </blockquote>
+            </li>
+            <li>
+             <p><em>v) What is the acceleration of the helicopter?</em></p>
+
+              <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+                <p>Remember that \(a = v' = s'' = \frac{dv}{dt}\)</p>
+                <p>So, differentiating \(v\) gives us: \(a = -1\text{m/s}^2\).</p>
+              </blockquote>
+            </li>
+          </ul>
+
+          <p>You will have to use a mixture of differentiation and integration to solve kinematic equations, so make sure that you're comfortable with differentiating and integrating these equations, as well as reading word problems.</p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Area Under a Curve</h2>
+          <p>One of the reasons integration was invented was to find the inverse transformation of differentiation (the anti-derivate). The other reason was to find the area of a region.</p><br/>
+
+          <p>If you're given two endpoints of the function, you can find the area the function covers by simply integrating it with a definite integral. If the graph is above the x-axis, this will work fine. If the curve is completely or partially below the x-axis, we need to take the absolute value of the area (\(|a|\)), as area can't be negative.</p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Area Above and Below the x-Axis</h2>
+          <p>For curves which are partially above and below the x-axis, taking the integral of the function will be useless, as the negative parts will cancel out.</p><br/>
+
+          <p>Instead, we have to split the integrals into above and below, and make sure to take the absolute value of the area below the x-axis.</p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Find the area underneath the first period (\(2\pi\)) of the curve \(f(x) = sin(x)\).</em></p><br/>
+
+          <p>To get the answer, we need to split the integrals and the substitute like so:
+            \[\eqalign{\text{Area} &= \int_{0}^{\pi}{\sin{(x)} dx} + |\int_{\pi}^{2\pi}{\sin{(x)} dx}| \\ &= (-\cos{\pi} + \cos{0}) + (|-\cos{2\pi} + \cos{\pi}|) \\ &= 2 + |-2| \\ &= 2 + 2 \\ &= 4}\]
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Area Between Two Curves</h2>
+          <p>The next step is to find the difference (area) between two curves. To do this, you can rewrite the problem as the difference between two functions:
+            \[\text{Area} = \int_{a}^{b}{f(x) dx} - \int_{a}^{b}{g(x) dx}\]
+          </p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Find the difference between \(\cos{(x)}\) and \(\sin{(x)}\) between 0 and the first point of intersection.</em></p><br/>
+
+          <p>Solving \(\sin{(x)} = \cos{(x)}\) gives us a value of \(x = \frac{\pi}{4}\).</p>
+          <p>This gives us boundaries of \(x = 0\) and \(x = \frac{\pi}{4}\).</p>
+          <p>Now we take the integral of each function:
+            \[\eqalign{\int_{0}^{\frac{\pi}{4}}{\cos{(x)} dx} &= (\cos{(\frac{\pi}{4})} - \cos{(0)}) \\ &= 0.7071 \text{ (4 d.p.)}}\]
+            \[\eqalign{\int_{0}^{\frac{\pi}{4}}{\sin{(x)} dx} &= (\sin{(\frac{\pi}{4})} - \sin{(0)}) \\ &= 0.2928 \text{ (4 d.p.)}}\]
+          </p>
+          <p>Subtracting the integral of the \(sin\) curve from the integral of the \(cos\) curve will give us the answer: \(0.7071 - 0.2928 = 0.4143\).</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note: in some questions you may be given the area and have to figure out the range of the integral, instead of the other way around. This can be done by substituting \(x\) as the unknown value in the range and then solve by integrating and solving for \(x\).</p>
+          </blockquote>
+
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/integration/techniques-2.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: TECHNIQUES (PART 2)</span>
+        </a>
+        <a href="/integration/numerical-methods.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT<span class="hidden md:inline-block">: NUMERICAL METHODS</span> >
+        </a>
+      </div>
+      
+    </div>
+  </body>
+</html>

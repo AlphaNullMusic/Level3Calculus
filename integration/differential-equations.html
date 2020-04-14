@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Differential Equations | Integration | Level 3 Calculus</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <div class="header">
+      <nav class="block md:flex items-center justify-between flex-wrap bg-blue-900" aria-label="Navigation Menu">
+        <div class="flex items-center justify-between flex-wrap md:block">
+          <div class="flex items-center flex-shrink-0 text-white m-6">
+            <a class="font-semibold text-xl tracking-tight" href="#">Level 3 Calculus</a>
+          </div>
+          <div class="block mr-6 md:hidden">
+            <button class="flex items-center px-3 py-2 border rounded text-gray-100 border-teal-400 hover:text-white hover:border-white" id="navbar_toggle">
+              <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-sm hidden p-3 md:block" id="link-container">
+          <a href="/index.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Home</a>
+          <a href="/topics.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">Topics</a>
+          <a href="/more-info.html" class="block md:inline-block text-gray-300 hover:text-white hover:bg-blue-800 rounded mr-4 p-3">More Info</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs sticky top-0 z-50">
+      <nav class="bg-blue-700 p-3 w-full" aria-label="Current Page Hierarchy">
+        <ol class="list-reset flex text-gray-300">
+            <li><a href="/index.html" class="text-white font-bold italic underline">Home</a> /
+            <a href="/topics.html" class="text-white font-bold italic underline">Topics</a> / 
+            <a href="/integration/introduction.html" class="text-white font-bold italic underline">Integration</a> / Differential Equations</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="wrapper pt-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 max-w-full text-lg">
+          <h1 class="title text-6xl font-light">Integration</h1>
+
+          <h2 class="text-2xl font-semibold pt-6">- Particular Solutions</h2>
+          <p>A differential equation is an equation that includes a derivative, such as: \(\frac{dy}{dx}, \frac{d^2 y}{dx^2}, f'(x), f''(x), y', y''\), etc. To solve them, we need to integrate.</p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>For example, to solve the differential equation \(y' = 8x + 3\), we would integrate to get \(y = 4x^2 + 3x + C\). This answer is called the general solution to the equation, because we haven't identified the value of the constant of integration.</p>
+          </blockquote>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Find the general solution to \(f'(x) = 15x^3 + 12x^2 + 3x - 2\).</em></p><br/>
+
+          <p>The answer is:
+            \[\eqalign{f(x) &= \int{(15x^3 + 12x^2 + 3x - 2)}\\ &= \frac{15x^4}{4} + 4x^3 + \frac{3x^2}{2} + 2x + C}\]
+          </p><br/>
+
+          <p>To find the particular solution of a differential equation, we must integrate it and then find the value of the constant of integration (\(c\)).</p>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Consider the differential equation \(y' = 8x + 3\), which passes through the point (1, 8).</em></p><br/>
+
+          <p>Because we know a point which it passes through, we can integrate and then solve to find \(c\):
+            \[y = 4x^2 + 3x + C\]
+            \[\eqalign{8 &= 4(1)^2 + 3(1) + C \\ &= 4 + 3 + C}\]
+            \[C = 1\]
+          </p>
+          <p>Therefore the particular solution to this equation is \(y = 4x^2 + 3x + 1\).</p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Second-Order Differential Equations</h2>
+          <p>The differential equations we have covered so far only contain a first derivative. They are called First Order Differential Equations.</p></br>
+
+          <p>We also need to know how to solve Second Order Differential Equations. To do so, we integrate the equation twice, remembering to include a different constant of integration for each time we integrate. These can be labelled so we can tell them apart. For example: \(C_{1}\) first and then \(C_{2}\).</p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Solve the differential equation \(\frac{d^2 y}{dx^2} = 20x^3 + 6x\), given that when \(x = 3\), \(y = 5\) and \(\frac{dy}{dx} = 10\).</em></p><br/>
+
+          <p>First we integrate to get a first order differential equation:
+            \[\eqalign{\frac{dy}{dx} &= \int{(20x^3 + 6x) dx}\\ &= 5x^4 + 3x^2 + C}\]
+          </p>
+          <p>We know that \(\frac{dy}{dx} = 10\) when \(x = 3\), so we can calculate the constant of integration:
+            \[\eqalign{10 &= 5(3)^4 + 3(3)^2 + C_{1} \\ &= 81 + 27 + C_{1}}\]
+            \[C_{1} = -91\]
+            \[\frac{dy}{dx} = 5x^4 + 3x^2 - 98\]
+          </p>
+          <p>Now we integrate again to get the general solution:
+            \[\eqalign{y &= \int{(5x^4 + 3x^2 - 98) dx} \\ &= x^5 + x^3 - 98x + C_{2}}\]
+          </p>
+          <p>Finally, we know that when \(x = 3\), \(y = 5\), so we can find the particular solution:
+            \[\eqalign{5 &= 3^5 + 3^3 - (98 * 3) + C_{2} \\ &= 243 + 27 - 294 = C_{2}}\]
+            \[C_{2} = 29\]
+          </p>
+          <p>Therefore \(y = x^5 + x^3 - 98x + 29\).<p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Seperated Variables</h2>
+          <p>Sometimes we may get a differential equation with two seperate part, such as:
+            \[\frac{dy}{dx} = f(x) * g(y)\]
+            In this instant \(f(x)\) is a function of \(x\), but \(g(y)\) is a function that only involves \(y\).
+          </p>
+          <p>To solve this problem, we must write the derivative as either a product or quotient of two functions.</p><br/>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>An example of this form is the equation:
+              \[\frac{dy}{dx} = (2 + x^2)(2y - 3)\]
+            </p>
+            <p>The best way to solve equations in this form is to re-write it so that everything in terms of \(y\) is one one side and everything in terms of \(x\) is on the other side.</p><br/>
+
+            <p>Note: because the derivative can be treated as a ratio, always use Leibniz notation (\(\frac{dy}{dx}\)) for this.</p>
+          </blockquote>
+
+          <p>If we start with the general form:
+            \[\frac{dy}{dx} = f(x) * g(y)\]
+          </p>
+          <p>We can multiply both sides by \(dx\) and divide both sides by \(g(y)\) to give:
+            \[\frac{1}{g(y)} dy = f(x) dx\]
+          </p>
+          <p>Integrating both sides will give us:
+            \[\int{\frac{1}{g(y)} dy} = \int{f(x) dx}\]
+          </p>
+          <p>The left hand side is now integrated with respect to \(y\) and the right hand side with respect to \(x\).</p>
+          <p>The solution will therefore be expressed in the form: \(G(y) = F(x)\), where \(G(y)\) is the integral of \(g(y)\) and \(F(x)\) is the integral of \(f(x)\).</p>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Find the general solution of the differential equation: \(\frac{dy}{dx} = \frac{x}{15y^2}\).</em></p><br/>
+
+          <p>First we multiply both by \(dx\) and \(15y^2\):
+            \[15y^2 dy = x dx\]
+          </p>
+          <p>Then we integrate them to get the general solution:
+            \[\int{15y^2 dy} = \int{x dx}\]
+            \[5y^3 = \frac{x^2}{2} + C\]
+          </p>
+
+          <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
+            <p>Note: it is a good idea to check your answer. To do so, you can substitute the differential of your answer back into the original question, and both sides should cancel out.</p>
+          </blockquote>
+
+          <h2 class="text-2xl font-semibold pt-6">- Applications of Differential Equations</h2>
+          <p>Differential equations are very useful when applied in fields like medicine and finance.</p>
+          <p>An equation with the form \(\frac{dy}{dx} = ky\) can be used to solve problems ranging from depreciation, population growth, temperature change, and radioactive decay.</p><br/>
+
+          <p>To see why it's so useful, lets solve it:
+            \[\frac{dy}{dx} = ky\]
+            \[(\frac{1}{y})dy = (k)dx\]
+            \[\int{(\frac{1}{y}) dy} = \int{(k) dx}\]
+            \[\ln{(y)} = kx + C\]
+            \[\eqalign{y &= e^{kc + C} \\ &= e^{kx}e^{C}}\]
+          </p>
+          <p>Therefore: \(y = y_{0}e^{kx}\) where \(y_{0} = e^C\).</p>
+          <p>You may be able to see know that this is the general formula for exponential growth/decay, as you may have used in your exams last year.</p>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; Mark has a large stamp collection. If the rate at which the value of the stamp appreciate depends on the value of the stamps, find the annual rate of appreciation for the collection. Mark purchased the collection at the beginning of 2012 for $2300 and it was valued at $3400 at the end of 2015.</em></p><br/>
+
+          <p>The general solution is:
+            \[P = P_{0}e^{it}\]
+            \[3400 = 2300e^{4i}\]
+            \[\eqalign{e^{4i} &= \frac{3400}{2300} \\ &= 1.478261}\]
+            \[4i = \ln{(1.478261)}\]
+            \[\eqalign{i &= \frac{\ln{(1.478261)}}{4} \\ &= 0.09772 \\ &= 9.8\text{%}}\]
+          </p>
+
+          <h2 class="text-2xl font-semibold pt-6">- Newton's Law of Cooling</h2>
+          <p>In the exam, you may be given a question about Newton's Law of Cooling. This is the formula which models how the surface temperate of an object changes at a rate proportional to the difference between its temperature and the temperature of the surrounding environment.</p><br/>
+
+          <p>It is modelled using a differential equation:
+            \[\frac{dT}{dt} = r(T - T_{s})\]
+          </p>
+          <p>where:</p>
+          <ul class="list-disc">
+            <li>\(T\) is the temperature of the object.</li>
+            <li>\(t\) is the time taken.</li>
+            <li>\(r\) is the rate of change of temperature per time period.</li>
+            <li>\(T_{s}\) is the temperature of the surrounding area.</li>
+          </ul><br/>
+
+          <p>We may need to find a general solution to this equation to answer a question in context:
+            \[\frac{1}{T - T_{s}}dT = (r)dt\]
+            \[\int{(\frac{1}{T - T_{s}}) dT} = \int{(r) dt}\]
+            \[\ln{(T - T_{s})} = rt + C\]
+            \[\eqalign{T - T_{s} &= e^{rt + C} \\ &= ke^{rt}}\]
+            \[T = T_{s} = ke^{rt}\]
+            where \(k = e^C\).
+          </p><br/>
+
+          <p><strong>Example:</strong></p>
+          <p><em>&bullet; A pizzeria has a contant temperature of 18&deg;C. The rate at which the pizza oven tray changes at any instant is proportional to the difference between the temperature of the oven tray and the room temperature at that instant.</em></p><br/>
+
+          <p><em>The temperature of the oven tray is 260&deg;C when it gets taken out. After 3 minutes its temperature is 100&deg;C. Solve the differential equation \(\frac{dT}{dt} = r(T - 18)\) to find what temperature it will be after another 4 minutes.</em></p><br/>
+
+          <p>Rearranging and solving for \(C\):
+            \[\frac{dT}{dt} = r(T - 18)\]
+            \[T = T_{s} + Ce^{rt}\]
+            \[\eqalign{260 &= 18 + Ce^{0 * r}\\ &= 18 + Ce^0 \\ &= 18 + C}\]
+            \[C = 242\]
+          </p>
+          <p>Now we can solve for \(r\) by substituting \(t = 3\), \(C = 242\), and \(T = 100\):
+            \[100 = 18 + 242e^{3r}\]
+            \[82 = 242e^{3r}\]
+            \[\frac{82}{242} = e^{3r}\]
+            \[ln(0.3388) = 3r\]
+            \[r = -0.3607\]
+            \[T = 18 + 242e^{-0.3607t}\]
+          </p>
+          <p>Finally, we solve for 4 minutes later, which means 7 minutes in total:
+            \[\eqalign{T &= 18 + 242e^{-0.3607 * 7}\\ &= 64.8^{\circ}\text{C}}\]
+          </p>
+          
+        </div>
+
+        <div class="w-full lg:w-1/6 w-1/3 h-full"></div>
+      </div>
+
+      <!-- Back and Next buttons -->
+      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+        <a href="/integration/numerical-methods.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          < BACK<span class="hidden md:inline-block">: NUMERICAL METHODS</span>
+        </a>
+        <a href="/complex-numbers/introduction.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
+          NEXT <span class="hidden md:inline-block">TOPIC</span> >
+        </a>
+      </div>
+      
+    </div>
+  </body>
+</html>
