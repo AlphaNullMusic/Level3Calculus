@@ -7,15 +7,21 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>-->
+    <script src="/assets/js/fitty.min.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/accordion.js"></script>
     <script>
       $(function() {
-        $("#accordion").accordion();
+        //$("#accordion").accordion();
+        fitty('.centered', {
+          minSize: 12,
+          maxSize: 50
+        });
       });
     </script>
   </head>
-  <body>
+  <body class="bg-gray-100">
     
     <!--Navbar-->
     <div class="header">
@@ -49,76 +55,190 @@
     </div>
 
     <!-- Main Content -->
-    <div class="wrapper pt-6">
+    <div class="wrapper">
       <div class="flex flex-wrap">
-        <div class="w-full lg:w-1/6 w-1/3 h-12"></div>
+        <div class="w-full lg:w-1/12 w-1/3 h-0"></div>
 
-        <div class="flex-1 h-12 leading-relaxed px-6 md:px-12">
+        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 py-6 mb-12 bg-white content-box text-lg">
           <h1 class="title text-6xl font-light">Topics</h1>
-          <div id="accordion">
+          <div id="accordion" class="py-6">
             <h3 class="differentiation">1. Differentiation</h3>
-            <div>
+            <div class="content-panel">
               <div class="flex flex-wrap overflow-hidden">
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="differentiation/introduction.html" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="differentiation/introduction.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/intro-icon.png"/>
+                      <div class="centered">Intro</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="differentiation/limits.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/diff-limits-icon.png"/>
+                      <div class="centered">Limits</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="differentiation/techniques-1.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/diff-techniques-1-icon.png"/>
+                      <div class="centered">Techniques <br/>Part 1</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="differentiation/techniques-2.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/diff-techniques-2-icon.png"/>
+                      <div class="centered">Techniques <br/>Part 2</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                  <a href="differentiation/parametric-curves.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/diff-parametric-curves-icon.png"/>
+                      <div class="centered">Parametric <br/>Curves</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                  <a href="differentiation/rates-of-change.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/diff-rates-of-change-icon.png"/>
+                      <div class="centered">Rates of <br/>Change</div>
+                    </div>
+                  </a>
                 </div>
 
               </div>
             </div>
             <h3 class="integration">2. Integration</h3>
-            <div>
+            <div class="content-panel">
               <div class="flex flex-wrap overflow-hidden">
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="integration/introduction.html" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="integration/introduction.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/intro-icon.png"/>
+                      <div class="centered">Intro</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="integration/techniques-1.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/int-techniques-1-icon.png"/>
+                      <div class="centered">Techniques <br/>Part 1</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="integration/techniques-2.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/int-techniques-2-icon.png"/>
+                      <div class="centered">Techniques <br/>Part 2</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="integration/areas.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/int-areas-icon.png"/>
+                      <div class="centered">Areas</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                  <a href="integration/numerical-methods.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/int-numerical-methods-icon.png"/>
+                      <div class="centered">Numerical <br/>Methods</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                  <a href="integration/differential-equations.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/int-differential-equations-icon.png"/>
+                      <div class="centered">Differential <br/>Equations</div>
+                    </div>
+                  </a>
                 </div>
 
               </div>
             </div>
 
             <h3 class="complex-numbers">3. Complex Numbers</h3>
-            <div>
+            <div class="content-panel">
               <div class="flex flex-wrap overflow-hidden">
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="complex-numbers/introduction.html" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="complex-numbers/introduction.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/intro-icon.png"/>
+                      <div class="centered">Intro</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="complex-numbers/complex-numbers.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/comp-complex-numbers-icon.png"/>
+                      <div class="centered">Complex <br/>Numbers</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="complex-numbers/equations.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/comp-equations-icon.png"/>
+                      <div class="centered">Equations</div>
+                    </div>
+                  </a>
                 </div>
 
                 <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
-                  <a href="#" class="topic-icon"><img src="assets/img/diff-intro-icon.png"/></a>
+                  <a href="complex-numbers/polar-form.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/comp-polar-form-icon.png"/>
+                      <div class="centered">Polar Form</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                  <a href="complex-numbers/demoivre.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/comp-demoivre-icon.png"/>
+                      <div class="centered">De Moivre's <br/>Theorem</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="my-5 py-5 px-5 w-full overflow-hidden sm:w-1/2 lg:w-1/4 xl:w-1/4">
+                  <a href="complex-numbers/loci.html" class="topic-icon">
+                    <div class="icon-container">
+                      <img src="assets/img/comp-loci-icon.png"/>
+                      <div class="centered">Loci</div>
+                    </div>
+                  </a>
                 </div>
 
               </div>
@@ -126,7 +246,7 @@
           </div>
         </div>
 
-        <div class="w-full lg:w-1/6 w-1/3 h-12"></div>
+        <div class="w-full lg:w-1/12 w-1/3 h-0"></div>
       </div>
     </div>
   </body>
