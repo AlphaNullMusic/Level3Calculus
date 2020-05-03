@@ -21,21 +21,26 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-  var fileName = location.href.split("/").slice(-1); 
+  // Get page name
+  var fileName = location.href.replace(/.*\/\/.*?\//g, "");
   if (fileName == "") {
     fileName = "index.html";
   }
+
+  // Get cookie if set
   var current_page = getCookie("current_page");
 
-  if (fileName == "index.html") {
+  // Change button text if cookie set
+  if (fileName == "index.html" && current_page != "") {
     $('a#get-started').text("KEEP LEARNING");
     $('a#get-started').attr('href', current_page);
   }
 
-  if (current_page != "index.html" &&
-      current_page != "topics.html" &&
-      current_page != "more-info.html") {
-    setCookie("current_page", current_page, 365);
+  // Set cookie if on a topic page
+  if (fileName != "index.html" &&
+      fileName != "topics.html" &&
+      fileName != "more-info.html") {
+    setCookie("current_page", "/" + fileName, 365);
   }
 }
 
@@ -55,7 +60,5 @@ function toggleNavbar() {
 
 window.onload = function() {
   checkCookie();
-
-  var navbarToggler = document.getElementById('navbar_toggle');
-  navbarToggler.addEventListener("click", toggleNavbar);
+  document.getElementById('navbar_toggle').addEventListener("click", toggleNavbar);
 }
