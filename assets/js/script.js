@@ -28,7 +28,7 @@ function checkCookie() {
   var current_page = getCookie("current_page");
 
   if (fileName == "index.html") {
-    $('a#get-started').text("Keep Learning");
+    $('a#get-started').text("KEEP LEARNING");
     $('a#get-started').attr('href', current_page);
   }
 

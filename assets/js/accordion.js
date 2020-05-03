@@ -1,4 +1,4 @@
-window.onload = function() {
+function initAccordion() {
   var accordion = $("#accordion");
   var i;
 

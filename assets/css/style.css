@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 html {
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif
 }
@@ -38,24 +40,16 @@ nav.navbar a.brand {
 
 h1.welcome {
   color: #636363;
-  font-size: 85px;
   font-weight: 300;
+}
+
+p span.tagline {
+  color: #636363;
+  border-top: 1px #000 solid;
 }
 
 .border-right {
   border-right: 3px solid rgba(38,38,38,0.2);
-}
-
-#accordion h3 {
-  background: #f3f3f3;
-  padding: 2rem;
-  font-size: 2rem;
-  font-weight: 300;
-}
-
-#accordion h3:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }
 
 .math-left-align .mjx-chtml.MJXc-display{
@@ -75,11 +69,36 @@ h1.welcome {
   -webkit-transition: all 0.5s;
 }
 
-.icon-container img {
+.icon-container:hover:after {
+    opacity: 0.8;
+}
+
+.icon-container:hover > .centered {
+  font-weight: 300;
+  transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.topic-container {
+  position: relative;
+  text-align: center;
+  line-height: 1;
+  background: #fff;
+}
+
+.topic-container:hover {
+  box-shadow: 0 0 12px 0px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.icon-container img,
+.topic-container img {
   display: inline-block;
 }
 
-.icon-container:after {
+.icon-container:after,
+.topic-container:after {
     content: '\A';
     position: absolute;
     width: 100%; 
@@ -92,11 +111,13 @@ h1.welcome {
     -webkit-transition: all 0.5s;
     z-index: 20;
 }
-.icon-container:hover:after {
-    opacity: 0.8;
+
+.topic-container:nth-of-type(2):after {
+  opacity: 0.6;
 }
 
-.icon-container .centered {
+.icon-container .centered,
+.topic-container .centered {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -105,12 +126,6 @@ h1.welcome {
   color: #fff;
   font-size: xxx-large;
   font-weight: 200;
-}
-
-.icon-container:hover > .centered {
-  font-weight: 300;
-  transition: all 0.5s;
-    -webkit-transition: all 0.5s;
 }
 
 .video-container {
@@ -127,6 +142,25 @@ h1.welcome {
     height: 100%;
 }
 
+/* Accordion */
+
+div#accordion h3 {
+  background: #f3f3f3;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+div#accordion h3:hover {
+  background: #dcdcdc;
+  cursor: pointer;
+}
+
+div#accordion h3.active {
+  background: #dcdcdc;
+  text-decoration: underline;
+}
+
 div#accordion div.content-panel {
   max-height: 0;
   overflow: hidden;
@@ -135,6 +169,7 @@ div#accordion div.content-panel {
 
 div#accordion h3:after {
   content: '\1431';
+  transform: rotate(90deg);
   font-size: 20px;
   line-height: 2.5;
   color: #777;
