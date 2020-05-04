@@ -74,7 +74,7 @@
             <figure class="py-6">
               <img src="/assets/img/limits-discontinuous-example.jpg" alt="Examples of different types of discontinuities."/>
               <figcaption><em>Examples of removable, jump and infinite discontinuities. Source: <a href="https://courses.lumenlearning.com/suny-openstax-calculus1/chapter/continuity/" class="underline" target="_blank">Lumen Learning</a>.</em></figcaption>
-            <figure>
+            </figure>
 
             <ol class="list-decimal list-inside">
               <li>A removable (or point) discontinuity is where \(\lim_{x \to a} f(x) \ne f(a)\) or \(f(a)\) doesn't exist. There is a hole at \(x=a\).</li>
@@ -130,21 +130,24 @@
 
           <h2 class="text-2xl font-semibold pt-6">- Finding Limits</h2>
           <ul class="list-disc px-6 items-left">
-            <li class="font-bold py-4">Approach 1</li>
-            <p>We can algebraically eliminate common factors and then substitute the value that <em>x</em> tends to. This is the easier of the two methods as we just need to check if there is a common factor on both the numerator and the denominator. If so, we divide by the common factor and substitute to find the limit.</p>
-            <p>\[\eqalign{\lim_{x \to 2} \frac{x^2-4}{x-2} &= \lim_{x \to 2} \frac{(x+2)(x-2)}{(x-2)} \\ &= \lim_{x \to 2} (x+2) \\ &= (2+2) \\ &= 4}\]</p>
-
-            <li class="font-bold py-4">Approach 2</li>
-            <p>If we can't find a common factor for the numerator and denominator, then we can substitute values that are very close to but not at the value of the limit (2 in this example).</p>
-            <p>When \(x = 1.99, \lim_{x \to 2} \frac{x^2-4}{x-2}\)<br/>
+            <li>
+              <h6 class="font-bold py-4">Approach 1</h6>
+              <p>We can algebraically eliminate common factors and then substitute the value that <em>x</em> tends to. This is the easier of the two methods as we just need to check if there is a common factor on both the numerator and the denominator. If so, we divide by the common factor and substitute to find the limit.</p>
+              <p>\[\eqalign{\lim_{x \to 2} \frac{x^2-4}{x-2} &= \lim_{x \to 2} \frac{(x+2)(x-2)}{(x-2)} \\ &= \lim_{x \to 2} (x+2) \\ &= (2+2) \\ &= 4}\]</p>
+            </li>
+            <li>
+              <h6 class="font-bold py-4">Approach 2</h6>
+              <p>If we can't find a common factor for the numerator and denominator, then we can substitute values that are very close to but not at the value of the limit (2 in this example).</p>
+              <p>When \(x = 1.99, \lim_{x \to 2} \frac{x^2-4}{x-2}\)<br/>
             &nbsp;\(= \lim_{x \to 2} \frac{1.99^2-4}{1.99-2}\)<br/>
             &nbsp;\(= 3.99\)</p>
 
-            <p>When \(x = 2.01, \lim_{x \to 2} \frac{x^2-4}{x-2}\)<br/>
+              <p>When \(x = 2.01, \lim_{x \to 2} \frac{x^2-4}{x-2}\)<br/>
             &nbsp;\(= \lim_{x \to 2} \frac{2.01^2-4}{2.01-2}\)<br/>
             &nbsp;\(= 4.01\)</p>
 
-            <p>Because the values from both sides when approaching 2 are close to 4, the limit when \(x=2\) is 4.</p>
+              <p>Because the values from both sides when approaching 2 are close to 4, the limit when \(x=2\) is 4.</p>
+            </li>
           </ul>
 
         </div>
@@ -155,10 +158,10 @@
       <!-- Back and Next buttons -->
       <div class="flex justify-between px-12 py-6 sticky bottom-0">
         <a href="/differentiation/introduction.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
-          < BACK<span class="hidden md:inline-block">: INTRODUCTION</span>
+          &lt; BACK<span class="hidden md:inline-block">: INTRODUCTION</span>
         </a>
         <a href="/differentiation/techniques-1.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
-          NEXT<span class="hidden md:inline-block">: TECHNIQUES (PART 1)</span> >
+          NEXT<span class="hidden md:inline-block">: TECHNIQUES (PART 1)</span> &gt;
         </a>
       </div>
       
