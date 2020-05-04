@@ -180,3 +180,11 @@ div#accordion h3:after {
 div#accordion h3.active:after {
   transform: rotate(180deg);
 }
+
+iframe.video {
+  border: 0px;
+}
+
+.list-circle {
+  list-style-type: circle;
+}
