@@ -8,6 +8,15 @@
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/fitty.min.js"></script>
+    <script>
+      $(function() {
+        fitty('#heading', {
+          minSize: 30,
+          maxSize: 64
+        });
+      });
+    </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
@@ -50,8 +59,10 @@
       <div class="flex flex-wrap">
         <div class="w-full lg:w-1/6 w-1/3 h-0"></div>
 
-        <div class="flex-1 h-full leading-relaxed px-6 md:px-12 py-6 bg-white content-box text-lg">
-          <h1 class="title text-6xl font-light">Integration</h1>
+        <div class="flex-1 h-full leading-relaxed px-4 sm:px-6 md:px-12 py-6 bg-white content-box text-lg">
+          <div class="heading-wrapper">
+            <h1 id="heading" class="title text-6xl font-light">Integration</h1>
+          </div>
 
           <h2 class="text-2xl font-semibold pt-6">- Integrating Polynomials</h2>
           <p>Differentiation is the process of finding the gradient of a curve at any point on that curve. Integration is the reverse process to differentiation.</p><br/>
@@ -84,7 +95,7 @@
 
           <h2 class="text-2xl font-semibold pt-6">- Integrating Rational Functions and Surds</h2>
           <p>Similarly to differentiation of rational functions, there are six situations for integration that you need to know:</p>
-          <ol class="list-decimal">
+          <ol class="list-decimal list-inside sm:list-outside">
             <li>If the function is already in index form, then use the rule directly:
               \[f(x) = 8x^3 - 2x^2 + 5\]
               \[\int{f(x)dx = 2x^4 - \frac{2x^3}{3} + 5x + c}\]
@@ -141,7 +152,7 @@
           </p><br/>
 
           <p><strong>Examples:</strong></p>
-          <ol class="list-decimal">
+          <ol class="list-decimal list-inside sm:list-outside">
             <li>
               <blockquote class="border-l-2 border-gray-600 pl-6 my-6">
                 <p>\[\eqalign{\int{8e^{3x} dx} &= \int{(\frac{8}{3} * 3)e^{3x} dx} \\ &= \frac{8e^{3x}}{3} + c}\]</p>
@@ -213,7 +224,7 @@
       </div>
 
       <!-- Back and Next buttons -->
-      <div class="flex justify-between px-12 py-6 sticky bottom-0">
+      <div class="flex justify-between px-2 sm:px-12 py-6 sticky bottom-0">
         <a href="/integration/introduction.html" class="inline-block bg-purple-700 hover:bg-purple-900 text-white font-light mx-2 my-4 py-2 px-4 rounded-full">
           &lt; BACK<span class="hidden md:inline-block">: INTRODUCTION</span>
         </a>
