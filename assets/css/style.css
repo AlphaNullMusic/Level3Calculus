@@ -1,3 +1,8 @@
+/* 
+ * CSS Stylesheet for Level 3 Calculus website
+ * by Roman Avery.
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 html {
@@ -8,25 +13,56 @@ body {
   margin: 0;
 }
 
-nav.navbar {
-  background: #002E7A;
+/* 
+ -===========-
+ | Accordion |
+ -===========-
+ */
+
+div#accordion h3 {
+  background: #f3f3f3;
   padding: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
-nav.navbar div.links {
-  display: table;
-  margin: 0 auto;
+div#accordion h3:hover {
+  background: #dcdcdc;
+  cursor: pointer;
 }
 
-nav.navbar div.links ul {
-  list-style: none;
+div#accordion h3.active {
+  background: #dcdcdc;
+  text-decoration: underline;
 }
 
-nav.navbar a.brand {
-  color: #fff;
-  font-size: 45px;
-  font-weight: 600;
+div#accordion div.content-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
+
+/* Arrow on the right of accordion titles */
+div#accordion h3:after {
+  content: '\1431';
+  transform: rotate(90deg);
+  font-size: 20px;
+  line-height: 2.5;
+  color: #777;
+  float: right;
+  transition: all 0.4s;
+}
+
+/* Turn arrow to face down */
+div#accordion h3.active:after {
+  transform: rotate(180deg);
+}
+
+/*
+ -=========-
+ | Content |
+ -=========-
+ */
 
 .content-box {
   box-shadow: 0px 1px 5px 0px grey;
@@ -38,6 +74,20 @@ nav.navbar a.brand {
   }
 }
 
+.border-right {
+  border-right: 3px solid rgba(38,38,38,0.2);
+}
+
+.list-circle {
+  list-style-type: circle;
+}
+
+/*
+ -==========-
+ | Homepage |
+ -==========-
+ */
+
 h1.welcome {
   color: #636363;
   font-weight: 300;
@@ -48,13 +98,11 @@ p span.tagline {
   border-top: 1px #000 solid;
 }
 
-.border-right {
-  border-right: 3px solid rgba(38,38,38,0.2);
-}
-
-.math-left-align .mjx-chtml.MJXc-display{
-    text-align: left !important;
-}
+/*
+ -=======-
+ | Icons |
+ -=======-
+ */
 
 .icon-container {
   position: relative;
@@ -97,6 +145,7 @@ p span.tagline {
   display: inline-block;
 }
 
+/* Dark overlay on icons */
 .icon-container:after,
 .topic-container:after {
     content: '\A';
@@ -112,10 +161,12 @@ p span.tagline {
     z-index: 20;
 }
 
+/* Every second topic icon lighter */
 .topic-container:nth-of-type(2):after {
   opacity: 0.6;
 }
 
+/* Center text on icons */
 .icon-container .centered,
 .topic-container .centered {
   position: absolute;
@@ -128,63 +179,24 @@ p span.tagline {
   font-weight: 200;
 }
 
+/*
+ -=======-
+ | Video |
+ -=======-
+ */
+
 .video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
 }
+
 .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Accordion */
-
-div#accordion h3 {
-  background: #f3f3f3;
-  padding: 2rem;
-  font-size: 2rem;
-  font-weight: 300;
-}
-
-div#accordion h3:hover {
-  background: #dcdcdc;
-  cursor: pointer;
-}
-
-div#accordion h3.active {
-  background: #dcdcdc;
-  text-decoration: underline;
-}
-
-div#accordion div.content-panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-div#accordion h3:after {
-  content: '\1431';
-  transform: rotate(90deg);
-  font-size: 20px;
-  line-height: 2.5;
-  color: #777;
-  float: right;
-  transition: all 0.4s;
-}
-
-div#accordion h3.active:after {
-  transform: rotate(180deg);
-}
-
-iframe.video {
-  border: 0px;
-}
-
-.list-circle {
-  list-style-type: circle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

@@ -45,7 +45,7 @@ function checkCookie() {
 }
 
 function toggleNavbar() {
-  if ($(document).width() < 769) {
+  if ($(document).width() < 768) {
     var links = $('#link-container');
 
     if (links.attr('data-toggled') && links.attr('data-toggled') == 'true') { 
@@ -74,6 +74,49 @@ function initAccordion() {
         content.style.maxHeight = content.scrollHeight + "px";
       }
     });
+  }
+}
+
+// Centers text vertically on the homepage
+function centerText(element) {
+  if ($('.icon-grid').outerHeight() > 50) {
+    // Icon grid has loaded properly
+    if ($(document).width() >= 768) {
+      // Device is medium or up
+      $(element).css({
+        'position' : 'absolute',
+        'top' : '50%',
+        // Sets margin top to negative half of wrapper height, minus half of icons width, plus half of header and breadcrumbs width
+        'margin-top' : function() {return -$(this).outerHeight()/2 - $('.icon-grid').outerHeight()/2 + $('.header').outerHeight()/2 + $('.breadcrumbs').outerHeight()/2 },
+        'width' : '100%'
+      });
+      $('.icon-grid').css({'position' : 'absolute'});
+    } else {
+      // Device is small, reset positions
+      $(element).css({
+        'position' : 'static',
+        'left' : '0',
+        'top' : '0',
+        'margin-left': '0',
+        'margin-top' : '0'
+      });
+    }
+
+    // Check device height to avoid overflow (use cases: landscape phone, ultra-widescreen)
+    var height = $('.header').outerHeight() + $('.breadcrumbs').outerHeight() + $(element).outerHeight() + $('.icon-grid').outerHeight();
+    if ($(document).height() < height) {
+      $(element).css({
+        'position' : 'static',
+        'left' : '0',
+        'top' : '0',
+        'margin-left': '0',
+        'margin-top' : '0'
+      });
+      $('.icon-grid').css({'position' : 'static'});
+    }
+  } else {
+    // Icons haven't loaded, try again in 300ms
+    setTimeout(function() {centerText(element);}, 300);
   }
 }
 
